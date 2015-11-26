@@ -9,6 +9,7 @@ find_package(Pangolin 0.1 REQUIRED)
 find_package(CUDA REQUIRED)
 find_package(OpenNI2 REQUIRED)
 find_package(efusion REQUIRED)
+find_package(freenect2 REQUIRED)
 
 include_directories(${ZLIB_INCLUDE_DIR})
 include_directories(${EIGEN_INCLUDE_DIRS})
@@ -16,6 +17,7 @@ include_directories(${Pangolin_INCLUDE_DIRS})
 include_directories(${CUDA_INCLUDE_DIRS})
 include_directories(${EFUSION_INCLUDE_DIR})
 include_directories(${OPENNI2_INCLUDE_DIR})
+include_directories(${freenect2_INCLUDE_DIR})
 
 file(GLOB srcs *.cpp)
 file(GLOB tools_srcs Tools/*.cpp)
@@ -36,4 +38,5 @@ target_link_libraries(ElasticFusion
                       ${CUDA_LIBRARIES}
                       ${EFUSION_LIBRARY}
                       ${OPENNI2_LIBRARY}
+                      ${freenect2_LIBRARIES}
 )
